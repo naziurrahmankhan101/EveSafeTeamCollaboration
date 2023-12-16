@@ -34,25 +34,25 @@ class CustomCarouel extends StatelessWidget {
                       context,
                       SafeWebView(
                           url:
-                          "https://gulfnews.com/world/asia/pakistan/womens-day-10-pakistani-women-inspiring-the-country-1.77696239"));
+                          "https://www.tbsnews.net/women-empowerment/inspiring-bangladeshi-women-recent-times-whom-you-need-know-254668"));
                 } else if (index == 1) {
                   navigateToRoute(
                       context,
                       SafeWebView(
                           url:
-                          "https://plan-international.org/ending-violence/16-ways-end-violence-girls"));
+                          "https://www.unwomen.org/en/what-we-do/ending-violence-against-women#:~:text=Violence%20negatively%20affects%20women's%20general,expenses%20and%20losses%20in%20productivity."));
                 } else if (index == 2) {
                   navigateToRoute(
                       context,
                       SafeWebView(
                           url:
-                          "https://www.healthline.com/health/womens-health/self-defense-tips-escape"));
+                          "https://www.aljazeera.com/program/women-make-change/"));
                 } else {
                   navigateToRoute(
                       context,
                       SafeWebView(
                           url:
-                          "https://www.healthline.com/health/womens-health/self-defense-tips-escape"));
+                          "https://explorerchick.com/journal/traits-strong-woman-told-strong-women/"));
                 }
               },
               child: Container(
