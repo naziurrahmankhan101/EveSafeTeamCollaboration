@@ -1,4 +1,4 @@
-# after_marjana
+# EveSafe-Women Safety App
 
 A new Flutter project.
 
