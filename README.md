@@ -4,10 +4,10 @@ A new Flutter project.
 
 Contributors-
 
-*Naziur Rahman Khan
-*Marjana Salauddin
-*Marjan Binta Monir
-*Aspia Amir
+*Naziur Rahman Khan<br>
+*Marjana Salauddin<br>
+*Marjan Binta Monir<br>
+*Aspia Amir<br><br>
 
 ## Getting Started
 
