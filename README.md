@@ -2,7 +2,7 @@
 
 A new Flutter project.
 
-Contributors-
+<b>Contributors-</b>
 
 *Naziur Rahman Khan<br>
 *Marjana Salauddin<br>
