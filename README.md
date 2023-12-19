@@ -2,6 +2,13 @@
 
 A new Flutter project.
 
+<b>Contributors-</b>
+
+<i><b>Naziur Rahman Khan<br>
+Marjana Salauddin<br>
+Marjan Binta Monir<br>
+Aspia Amir</b></i><br><br>
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
