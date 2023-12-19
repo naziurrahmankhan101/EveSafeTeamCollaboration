@@ -2,6 +2,7 @@ import 'dart:math';
 
 
 import 'package:after_marjana/widgets/home_widgets/emergency.dart';
+import 'package:after_marjana/widgets/home_widgets/live_safe.dart';
 import 'package:flutter/material.dart';
 import 'package:after_marjana/widgets/home_widgets/custom_appBar.dart';
 
@@ -53,7 +54,15 @@ class _HomeScreenState extends State<HomeScreen> {
                         style: TextStyle(color: Colors.white70,fontSize: 40,fontWeight: FontWeight.bold),
                       ),
                     ),
+
                     Emergency(),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text("Explore LiveSafe",
+                        style: TextStyle(color: Colors.white70,fontSize: 40,fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    LiveSafe(),
                   ],
                 ),
               ),
