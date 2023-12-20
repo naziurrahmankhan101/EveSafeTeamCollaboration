@@ -1,3 +1,4 @@
+import 'package:after_marjana/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:after_marjana/home_screen.dart';
@@ -16,13 +17,12 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          textTheme: GoogleFonts.firaSansCondensedTextTheme(
-            Theme.of(context).textTheme,
-          ),
+            textTheme: GoogleFonts.firaSansCondensedTextTheme(
+              Theme.of(context).textTheme,
+            ),
             primarySwatch: Colors.blue
         ),
-        home: HomeScreen()
-    );
+        home: LoginScreen());
   }
 }
 
