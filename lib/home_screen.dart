@@ -3,6 +3,7 @@ import 'dart:math';
 
 import 'package:after_marjana/widgets/home_widgets/emergency.dart';
 import 'package:after_marjana/widgets/home_widgets/live_safe.dart';
+import 'package:after_marjana/widgets/home_widgets/safehome/SafeHome.dart';
 import 'package:flutter/material.dart';
 import 'package:after_marjana/widgets/home_widgets/custom_appBar.dart';
 
@@ -63,6 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     LiveSafe(),
+                    SafeHome(),
                   ],
                 ),
               ),
