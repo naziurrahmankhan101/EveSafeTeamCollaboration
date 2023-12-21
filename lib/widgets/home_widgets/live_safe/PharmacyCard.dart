@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class PharmacyCard extends StatelessWidget {
-  const PharmacyCard({super.key});
+  final Function? onMapFunction;
+  const PharmacyCard({Key? key, this.onMapFunction}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -9,18 +10,23 @@ class PharmacyCard extends StatelessWidget {
       padding: const EdgeInsets.only(left: 20),
       child: Column(
         children: [
-          Card(
-            elevation: 3,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20),
-            ),
-            child: Container(
-              height: 57,
-              width: 57,
-              child:Center(
-                child: Image.asset(
-                  'assets/Pharmacy.jpg',
-                  height: 30,
+          InkWell(
+            onTap: (){
+              onMapFunction!('Pharmacy+near+me');
+            },
+            child: Card(
+              elevation: 3,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Container(
+                height: 57,
+                width: 57,
+                child:Center(
+                  child: Image.asset(
+                    'assets/Pharmacy.jpg',
+                    height: 30,
+                  ),
                 ),
               ),
             ),
