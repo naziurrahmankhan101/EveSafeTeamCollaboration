@@ -3,7 +3,7 @@ import 'package:after_marjana/components/SecondaryButton.dart';
 import 'package:after_marjana/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:after_marjana/components/custom_textfield.dart';
-import 'custom_textfield.dart';
+
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
