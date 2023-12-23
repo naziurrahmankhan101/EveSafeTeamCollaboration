@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "451228334146",
+    "project_id": "evesafe-86e8f",
+    "storage_bucket": "evesafe-86e8f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:451228334146:android:38b4425dc5659aa78795db",
+        "android_client_info": {
+          "package_name": "com.example.after_marjana"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIwzoBWe4ITQGxELWuGdlYSAMyBpUNpiU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

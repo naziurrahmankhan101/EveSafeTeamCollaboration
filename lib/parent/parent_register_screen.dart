@@ -38,16 +38,6 @@ class _RegisterParentScreenState extends State<RegisterParentScreen> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Text(
-                        "Register as guardian",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold,
-                          color: primaryColor,
-
-                        ),
-                      ),
                       Transform.scale(
                         scale:2,
                         child: Image.asset(
@@ -56,6 +46,17 @@ class _RegisterParentScreenState extends State<RegisterParentScreen> {
                           width: 100,
                         ),
                       ),
+                      Text(
+                        "Register as Guardian",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 45,
+                          fontWeight: FontWeight.bold,
+                          color: primaryColor,
+
+                        ),
+                      ),
+
                     ],
                   ),
                 ),
@@ -186,7 +187,7 @@ class _RegisterParentScreenState extends State<RegisterParentScreen> {
                 ),
 
 
-                SecondaryButton(title: "Forgot Password? Click Here", onPressed: (){}),
+                //SecondaryButton(title: "Forgot Password? Click Here", onPressed: (){}),
                 SecondaryButton(
                     title: "Login with your account",
                     onPressed: (){
