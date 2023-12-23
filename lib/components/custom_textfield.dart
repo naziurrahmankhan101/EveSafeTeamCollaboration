@@ -17,7 +17,6 @@ class CustomTextField extends StatelessWidget {
   final Widget? prefix;
   final Widget? suffix;
 
-
   CustomTextField(
   {this.controller,
     this.check,
