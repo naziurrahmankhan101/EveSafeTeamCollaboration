@@ -1,4 +1,4 @@
-import 'package:after_marjana/login_screen.dart';
+import 'package:after_marjana/child/child_login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:after_marjana/home_screen.dart';

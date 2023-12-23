@@ -1,10 +1,10 @@
-import 'package:after_marjana/login_screen.dart';
+import 'package:after_marjana/child/child_login_screen.dart';
 import 'package:after_marjana/utils/constants.dart';
 import 'package:flutter/material.dart';
 
-import 'components/PrimaryButton.dart';
-import 'components/SecondaryButton.dart';
-import 'components/custom_textfield.dart';
+import '../components/PrimaryButton.dart';
+import '../components/SecondaryButton.dart';
+import '../components/custom_textfield.dart';
 
 class RegisterChildScreen extends StatefulWidget {
   @override
@@ -173,7 +173,7 @@ class _RegisterChildScreenState extends State<RegisterChildScreen> {
                               :Icon(Icons.visibility)),
                         ),
                         PrimaryButton(
-                            title: "Login",
+                            title: "Confirm Registration",
                             onPressed: (){
                               if(_formKey.currentState!.validate()){
                                 _onSubmit();
