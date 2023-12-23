@@ -1,17 +1,15 @@
-import 'package:after_marjana/components/PrimaryButton.dart';
-import 'package:after_marjana/utils/constants.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:after_marjana/components/custom_textfield.dart';
-import 'custom_textfield.dart';
 
 class CustomTextField extends StatelessWidget {
+
   final String? hintText;
-  final  TextEditingController? controller;
-  final String? Function(String?)? validate;
-  final String? Function(String?)? onsave;
+  final TextEditingController? controller;
+  final String? Function(String?)?validate;
+  final Function(String?)? onsave;
   final int? maxLines;
   final bool isPassword;
-  final bool  enable;
+  final bool enable;
   final bool? check;
   final TextInputType? keyboardtype;
   final TextInputAction? textInputAction;
@@ -19,59 +17,64 @@ class CustomTextField extends StatelessWidget {
   final Widget? prefix;
   final Widget? suffix;
 
-  CustomTextField(
-      {this.controller,
-        this.check,
-        this.enable=true,
-        this.focusNode,
-        this.hintText,
-        this.isPassword = false,
-        this.keyboardtype,
-        this.maxLines,
-        this.onsave,
-        this.prefix,
-        this.suffix,
-        this.textInputAction,
-        this.validate
-      }) {
 
-  }
+  CustomTextField(
+  {this.controller,
+    this.check,
+    this.enable = true,
+    this.focusNode,
+    this.hintText,
+    this.isPassword = false,
+    this.keyboardtype,
+    this.maxLines,
+    this.onsave,
+    this.prefix,
+    this.suffix,
+    this.textInputAction,
+    this.validate});
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      enabled: enable == true ? true : enable,
-      maxLines: maxLines == null ? 1 : maxLines,
+      enabled: enable==true?true: enable,
+      maxLines: maxLines == null? 1 : maxLines,
       onSaved: onsave,
       focusNode: focusNode,
       textInputAction: textInputAction,
-      keyboardType: keyboardtype == null ? TextInputType.name:keyboardtype,
+      keyboardType: keyboardtype ==null?TextInputType.name:keyboardtype,
       controller: controller,
-      obscureText: isPassword == false ? false: isPassword,
+      validator: validate,
+      obscureText: isPassword==false?false:isPassword,
       decoration: InputDecoration(
-        prefixIcon: prefix,
-        suffixIcon: suffix,
-        labelText: hintText ?? "hint text..",
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(40),
-          borderSide: BorderSide(
-            style: BorderStyle.solid,
-            color: Colors.red,
-          ),
-        ),
+        prefixIcon: prefix ,
+         suffixIcon: suffix,
+         labelText: hintText?? "hint text...",
+         focusedBorder: OutlineInputBorder(
+           borderRadius: BorderRadius.circular(30),
+           borderSide: BorderSide(
+             style: BorderStyle.solid,
+             color: Colors.blue,
+           ),
+         ),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(40),
-          borderSide: BorderSide(
-            style: BorderStyle.solid,
-            color: Color(0xFF909A9E),
-          ),
-
+          borderRadius: BorderRadius.circular(30),
+            borderSide: BorderSide(
+              style: BorderStyle.solid,
+              color: Colors.blueGrey,
+            ),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(30),
+            borderSide: BorderSide(
+              style: BorderStyle.solid,
+              color: Theme.of(context).primaryColor,
+            ),
         ),
         errorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(40),
+          borderRadius: BorderRadius.circular(30),
           borderSide: BorderSide(
             style: BorderStyle.solid,
             color: Colors.red,
-
           ),
         ),
       ),
