@@ -1,5 +1,6 @@
 import 'package:after_marjana/child/child_login_screen.dart';
 import 'package:after_marjana/utils/constants.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../components/PrimaryButton.dart';
@@ -20,6 +21,23 @@ class _RegisterChildScreenState extends State<RegisterChildScreen> {
 
   _onSubmit(){
     _formKey.currentState!.save();
+    if(_formData['password']!=_formData['rpassword']){
+      dialogueBox(context, 'Password and Re-type password should be equal!');
+    } else {
+      progressIndicator(context);
+      try{
+        FirebaseAuth auth = FirebaseAuth.instance;
+        auth.createUserWithEmailAndPassword(
+            email: _formData['email'].toString(),
+            password: _formData['password'].toString()).whenComplete(() => goTo(context,LoginScreen()));
+      } on FirebaseAuthException catch (e) {
+        dialogueBox(context, e.toString());
+      }
+      catch(e) {
+        dialogueBox(context, e.toString());
+      }
+    }
+
     print(_formData['email']);
     print(_formData['password']);
   }
@@ -156,7 +174,7 @@ class _RegisterChildScreenState extends State<RegisterChildScreen> {
                           prefix: Icon(Icons.lock_open_outlined),
                           //onsave: () {},
                           onsave: (password) {
-                            _formData['password'] = password ?? "";
+                            _formData['rpassword'] = password ?? "";
                           },
                           validate: (password) {
                             if(password!.isEmpty || password.length<7 ){

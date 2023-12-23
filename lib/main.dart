@@ -6,7 +6,14 @@ import 'package:after_marjana/home_screen.dart';
 
 void main()async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: FirebaseOptions(
+        apiKey: "AIzaSyAIwzoBWe4ITQGxELWuGdlYSAMyBpUNpiU",
+        appId: "1:451228334146:android:38b4425dc5659aa78795db",
+        messagingSenderId: "451228334146",
+        projectId: "evesafe-86e8f",
+    ),
+  );
   runApp(const MyApp());
 }
 

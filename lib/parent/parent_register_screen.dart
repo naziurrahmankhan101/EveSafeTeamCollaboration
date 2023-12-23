@@ -20,6 +20,7 @@ class _RegisterParentScreenState extends State<RegisterParentScreen> {
 
   _onSubmit(){
     _formKey.currentState!.save();
+    progressIndicator(context);
     print(_formData['email']);
     print(_formData['password']);
   }
@@ -156,7 +157,7 @@ class _RegisterParentScreenState extends State<RegisterParentScreen> {
                           prefix: Icon(Icons.lock_open_outlined),
                           //onsave: () {},
                           onsave: (password) {
-                            _formData['password'] = password ?? "";
+                            _formData['rpassword'] = password ?? "";
                           },
                           validate: (password) {
                             if(password!.isEmpty || password.length<7 ){

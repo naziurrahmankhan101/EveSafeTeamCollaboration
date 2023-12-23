@@ -1,3 +1,5 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 
 Color primaryColor = Color(0xbe346cc9);
@@ -10,7 +12,28 @@ void goTo(BuildContext context, Widget nextScreen) {
       ));
 }
 
-dialogueBox(BuildContext context, String text) {
+dialogueBox(BuildContext context, String text){
+  showDialog(
+    context: context,
+    builder: (context) => AlertDialog(
+      title: Text(text),
+    ),
+  );
+}
+
+progressIndicator(BuildContext context){
+  showDialog(
+     barrierDismissible: false,
+      context: context,
+      builder: (context) => Center(child: CircularProgressIndicator(
+        backgroundColor: primaryColor,
+        color: Colors.black38,
+        strokeWidth: 7,
+      ))
+  );
+}
+
+/*dialogueBox(BuildContext context, String text) {
   showDialog(
     context: context,
     builder: (context) => AlertDialog(
@@ -26,4 +49,5 @@ Widget progressIndicator(BuildContext context) {
         color: Colors.black,
         strokeWidth: 7,
       ));
-}
+}*/
+
