@@ -1,6 +1,7 @@
 
 import 'package:after_marjana/components/SecondaryButton.dart';
 import 'package:after_marjana/components/custom_textfield.dart';
+import 'package:after_marjana/register_child.dart';
 import 'package:after_marjana/utils/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -124,7 +125,12 @@ class _LoginScreenState extends State<LoginScreen> {
 
 
               SecondaryButton(title: "Forgot Password? Click Here", onPressed: (){}),
-              SecondaryButton(title: "Register New User", onPressed: (){}),
+              SecondaryButton(
+                  title: "Register New User",
+                  onPressed: (){
+                  goTo(context, RegisterChildScreen());
+
+              }),
 
 
 
