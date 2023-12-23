@@ -1,12 +1,15 @@
-import 'package:after_marjana/components/PrimaryButton.dart';
 import 'package:after_marjana/components/SecondaryButton.dart';
-import 'package:after_marjana/utils/constants.dart';
-import 'package:flutter/material.dart';
 import 'package:after_marjana/components/custom_textfield.dart';
+import 'package:after_marjana/utils/constants.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+import 'components/PrimaryButton.dart';
+
 
 
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+  const LoginScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,21 +19,18 @@ class LoginScreen extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
+              children: [
                 Text(
                   "USER LOGIN",
-                  style: TextStyle(fontSize: 40,
-                      fontWeight: FontWeight.bold,
-                      color: primaryColor),
-                ),
+                  style: TextStyle(
+                    fontSize: 40,
+                    fontWeight: FontWeight.bold,
+                    color: primaryColor,
 
-                //Image.asset(
-                 // 'assets/EveSafeLight.png',
-                //height: 100,
-                //width: 100,
-                //),
+                  ),
+                ),
                 Transform.scale(
-                  scale: 2.0,
+                  scale:2.5,
                   child: Image.asset(
                     'assets/evesafe.png',
                     height: 100,
@@ -38,33 +38,22 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
 
-
-
-
-
-
-
                 CustomTextField(
-                  hintText: 'enter name',
-                  prefix: Icon(Icons.person),
+                  hintText: "Enter Name",
+                  prefix: Icon(Icons.person_2_rounded),
                 ),
                 CustomTextField(
-                  hintText: 'enter password',
-                  prefix: Icon(Icons.person),
+                  hintText: "Enter Password",
+                  prefix: Icon(Icons.lock_open_outlined),
                 ),
-                PrimaryButton(title: 'REGISTER', onPressed: () {}),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Forgot Password?',
-                      style: TextStyle(fontSize: 18),
+                PrimaryButton(title: "Register", onPressed: (){}),
 
-                    ),
-                    SecondaryButton(title: 'click here', onPressed: (){}),
-                  ],
-                ),
-                SecondaryButton(title: 'Register new user', onPressed: (){})
+                SecondaryButton(title: "Register New User", onPressed: (){}),
+
+                SecondaryButton(title: "Forgot Password?", onPressed: (){})
+
+
+
 
               ],
             ),
@@ -72,4 +61,3 @@ class LoginScreen extends StatelessWidget {
     );
   }
 }
-
