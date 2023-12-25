@@ -114,7 +114,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       PrimaryButton(
                         title: "Login",
                           onPressed: (){
-                          progressIndicator(context);
+                          //progressIndicator(context);
                           //if(_formKey.currentState!.validate()){
                             //_onSubmit();
                           //}

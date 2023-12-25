@@ -1,11 +1,13 @@
 import 'package:after_marjana/child/child_login_screen.dart';
 import 'package:after_marjana/utils/constants.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../components/PrimaryButton.dart';
 import '../components/SecondaryButton.dart';
 import '../components/custom_textfield.dart';
+import '../model/user_model.dart';
 
 class RegisterChildScreen extends StatefulWidget {
   @override
@@ -29,7 +31,24 @@ class _RegisterChildScreenState extends State<RegisterChildScreen> {
         FirebaseAuth auth = FirebaseAuth.instance;
         auth.createUserWithEmailAndPassword(
             email: _formData['email'].toString(),
-            password: _formData['password'].toString()).whenComplete(() => goTo(context,LoginScreen()));
+            password: _formData['password'].toString())
+            .then((v) async {
+          DocumentReference<Map<String, dynamic>> db=
+              FirebaseFirestore.instance.collection('users').doc(v.user!.uid);
+          final user = UserModel(
+            name: _formData['name'].toString(),
+            phone: _formData['phone'].toString(),
+            childEmail: _formData['cemail'].toString(),
+            guardianEmail: _formData['gemail'].toString(),
+            id: v.user!.uid,
+            type: 'child',
+          );
+              final jsonData = user.toJson();
+              await db.set(jsonData).whenComplete(() {
+                goTo(context, LoginScreen());
+              });
+
+        });
       } on FirebaseAuthException catch (e) {
         dialogueBox(context, e.toString());
       }
