@@ -21,7 +21,7 @@ dialogueBox(BuildContext context, String text){
   );
 }
 
-progressIndicator(BuildContext context){
+/*progressIndicator(BuildContext context){
   showDialog(
      barrierDismissible: false,
       context: context,
@@ -31,7 +31,7 @@ progressIndicator(BuildContext context){
         strokeWidth: 7,
       ))
   );
-}
+}*/
 
 /*dialogueBox(BuildContext context, String text) {
   showDialog(
@@ -40,7 +40,7 @@ progressIndicator(BuildContext context){
       title: Text(text),
     ),
   );
-}
+}*/
 
 Widget progressIndicator(BuildContext context) {
   return Center(
@@ -49,5 +49,5 @@ Widget progressIndicator(BuildContext context) {
         color: Colors.black,
         strokeWidth: 7,
       ));
-}*/
+}
 

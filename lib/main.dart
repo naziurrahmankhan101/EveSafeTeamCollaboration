@@ -1,4 +1,7 @@
 import 'package:after_marjana/child/child_login_screen.dart';
+import 'package:after_marjana/db/share_pref.dart';
+import 'package:after_marjana/parent/parent_home_screen.dart';
+import 'package:after_marjana/utils/constants.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -14,6 +17,7 @@ void main()async {
         projectId: "evesafe-86e8f",
     ),
   );
+  await MySharedPrefference.init();
   runApp(const MyApp());
 }
 
@@ -33,7 +37,41 @@ class MyApp extends StatelessWidget {
             primarySwatch: Colors.blue
         ),
 
-        home: LoginScreen());
+        home: FutureBuilder(
+    future: MySharedPrefference.getUserType(),
+
+    builder: (BuildContext context, AsyncSnapshot snapshot){
+
+      if(snapshot.data==""){
+        return LoginScreen();
+      }
+      if(snapshot.data=="child"){
+        return HomeScreen();
+      }
+      if(snapshot.data=="parent"){
+        return ParentHomeScreen();
+      }
+
+      return progressIndicator(context);
+    },
+        ),
+    );
   }
 }
 
+/*class CheckAuth extends StatelessWidget {
+  const CheckAuth({super.key});
+
+  checkData(){
+    if(MySharedPrefference.getUserType()=='parent'){
+
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+
+    );
+  }
+}*/
