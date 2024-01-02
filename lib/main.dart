@@ -1,3 +1,4 @@
+import 'package:after_marjana/child/buttom_page.dart';
 import 'package:after_marjana/child/child_login_screen.dart';
 import 'package:after_marjana/db/share_pref.dart';
 import 'package:after_marjana/parent/parent_home_screen.dart';
@@ -5,8 +6,8 @@ import 'package:after_marjana/utils/constants.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:after_marjana/home_screen.dart';
-
+import 'package:after_marjana/child/bottom_screens/child_home_page.dart';
+import 'package:after_marjana/child/buttom_page.dart';
 void main()async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
@@ -46,7 +47,7 @@ class MyApp extends StatelessWidget {
         return LoginScreen();
       }
       if(snapshot.data=="child"){
-        return HomeScreen();
+        return BottomPage();
       }
       if(snapshot.data=="parent"){
         return ParentHomeScreen();

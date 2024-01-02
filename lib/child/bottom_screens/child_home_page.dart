@@ -7,7 +7,7 @@ import 'package:after_marjana/widgets/home_widgets/safehome/SafeHome.dart';
 import 'package:flutter/material.dart';
 import 'package:after_marjana/widgets/home_widgets/custom_appBar.dart';
 
-import 'widgets/home_widgets/CustomCarouel.dart';
+import '../../widgets/home_widgets/CustomCarouel.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
