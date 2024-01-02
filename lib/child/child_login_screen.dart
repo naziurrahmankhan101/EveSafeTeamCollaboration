@@ -10,7 +10,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../components/PrimaryButton.dart';
-import '../home_screen.dart';
+import 'bottom_screens/child_home_page.dart';
 import '../parent/parent_home_screen.dart';
 import '../parent/parent_register_screen.dart';
 
