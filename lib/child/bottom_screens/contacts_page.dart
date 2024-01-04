@@ -1,6 +1,6 @@
-import 'dart:html';
 
 import 'package:after_marjana/utils/constants.dart';
+import 'package:contacts_service/contacts_service.dart';
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
 
@@ -12,7 +12,7 @@ class ContactsPage extends StatefulWidget {
 }
 
 class _ContactsPageState extends State<ContactsPage> {
-
+  List<Contact> contacts=[];
   @override
   void initState(){
     super.initState();
@@ -24,33 +24,54 @@ class _ContactsPageState extends State<ContactsPage> {
     PermissionStatus permissionStatus= await getContactsPermissions();
 
     if(permissionStatus==PermissionStatus.granted){
-
+       getAllContacts();
     }else{
-      handInvalidPermission(permissionStatus);
+      handInvaliedPermissions(permissionStatus);
     }
   }
 
-  handInvalidPermission(PermissionStatus permissionStatus){
-    if(permissionStatus==PermissionStatus.denied){
-      dialogueBox(context, "Access is denied");
-    }else if(permissionStatus == PermissionStatus.permanentlyDenied){
-      dialogueBox(context, "Contact doesn't exist");
+  handInvaliedPermissions(PermissionStatus permissionStatus) {
+    if (permissionStatus == PermissionStatus.denied) {
+      dialogueBox(context, "Access to the contacts denied by the user");
+    } else if (permissionStatus == PermissionStatus.permanentlyDenied) {
+      dialogueBox(context, "May contact does exist in this device");
     }
   }
 
-  Future<PermissionStatus> getContactsPermissions() async{
-    PermissionStatus permission= await Permission.contacts.status;
-    if(permission != PermissionStatus.granted &&
+  Future<PermissionStatus> getContactsPermissions() async {
+    PermissionStatus permission = await Permission.contacts.status;
+    if (permission != PermissionStatus.granted &&
         permission != PermissionStatus.permanentlyDenied) {
       PermissionStatus permissionStatus = await Permission.contacts.request();
       return permissionStatus;
-    }else
+    } else {
       return permission;
+    }
   }
+
+  getAllContacts() async{
+    List<Contact> _contacts= await ContactsService.getContacts();
+
+    setState(() {
+      contacts=_contacts;
+    });
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Text("Contact Page")),
+      body: contacts.length == 0
+      ? Center(child: CircularProgressIndicator())
+      : ListView.builder(
+        itemCount: contacts.length,
+        itemBuilder: (BuildContext context, int index){
+          Contact contact=contacts[index];
+          return ListTile(
+            title: Text(contact.displayName!),
+          );
+        },
+      )
     );
   }
 }
