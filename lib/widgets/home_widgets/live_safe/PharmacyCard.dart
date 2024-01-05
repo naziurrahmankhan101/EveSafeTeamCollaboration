@@ -32,7 +32,7 @@ class PharmacyCard extends StatelessWidget {
             ),
           ),
           Text('Pharmacy',
-              style: TextStyle(color: Colors.white70,fontSize: 20,fontWeight: FontWeight.bold),)
+              style: TextStyle(color: Colors.black,fontSize: 20,fontWeight: FontWeight.bold),)
         ],
       ),
     );

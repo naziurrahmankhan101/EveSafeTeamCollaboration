@@ -20,7 +20,7 @@ class CustomAppBar extends StatelessWidget {
           sweetSayings[quoteIndex!],
           style: TextStyle(
             fontSize: 25,
-            color: Colors.white, // Set your desired text color here
+            color: Colors.black, // Set your desired text color here
             // You can use other properties of TextStyle to further customize the text style if needed
           ),
         ),

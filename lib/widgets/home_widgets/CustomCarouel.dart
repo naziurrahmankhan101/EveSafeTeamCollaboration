@@ -14,6 +14,7 @@ class CustomCarouel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 280,
       child: CarouselSlider(
         options: CarouselOptions(
           aspectRatio: 2.0,
@@ -79,7 +80,7 @@ class CustomCarouel extends StatelessWidget {
                         articleTitle[index],
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          color: Colors.white,
+                          color: Colors.white70,
                           fontSize: MediaQuery.of(context).size.width * 0.05,
                         ),
                       ),
