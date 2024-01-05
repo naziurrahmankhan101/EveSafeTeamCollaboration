@@ -69,6 +69,15 @@ class _ContactsPageState extends State<ContactsPage> {
           Contact contact=contacts[index];
           return ListTile(
             title: Text(contact.displayName!),
+            subtitle: Text(contact.phones!.first.value!),
+            leading: contact.avatar!=null &&contact.avatar!.length>0
+                ? CircleAvatar(
+              backgroundImage: MemoryImage(contact.avatar!),
+            )
+              : CircleAvatar(
+                child: Text(contact.initials()),
+            ),
+
           );
         },
       )
