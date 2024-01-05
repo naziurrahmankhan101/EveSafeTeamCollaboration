@@ -20,35 +20,32 @@ class _ContactsPageState extends State<ContactsPage> {
     askPermissions();
   }
 
-  String flattenPhoneNumber(String phoneStr){
-    return phoneStr.replaceAllMapped(RegExp(r'^(\+)|\D'),(Match m){
-      return m[0] == "+"? "+" : "";
-
+  String flattenPhoneNumber(String phoneStr) {
+    return phoneStr.replaceAllMapped(RegExp(r'^(\+)|\D'), (Match m) {
+      return m[0] == "+" ? "+" : "";
     });
   }
 
-  filterContract(){
+  filterContact() {
     List<Contact> _contacts = [];
     _contacts.addAll(contacts);
-    if(searchController.text.isNotEmpty){
+    if (searchController.text.isNotEmpty) {
       _contacts.retainWhere((element) {
         String searchTerm = searchController.text.toLowerCase();
-        String searchTermFlattern = flattenPhoneNumber(searchTerm);
+        String searchTermFlattren = flattenPhoneNumber(searchTerm);
         String contactName = element.displayName!.toLowerCase();
         bool nameMatch = contactName.contains(searchTerm);
-        if(nameMatch == true){
-         return true;
-          }
-        if(searchTermFlattern.isEmpty)
-          {
-            return false;
-          }
-          var phone = element.phones!.firstWhere((p){
-            String phnFlattered = flattenPhoneNumber(p.value!);
-            return phnFlattered.contains(searchTermFlattern);
-
+        if (nameMatch == true) {
+          return true;
+        }
+        if (searchTermFlattren.isEmpty) {
+          return false;
+        }
+        var phone = element.phones!.firstWhere((p) {
+          String phnFLattered = flattenPhoneNumber(p.value!);
+          return phnFLattered.contains(searchTermFlattren);
         });
-        return phone.value!=null;
+        return phone.value != null;
       });
     }
     setState(() {
@@ -62,8 +59,10 @@ class _ContactsPageState extends State<ContactsPage> {
 
     if(permissionStatus==PermissionStatus.granted){
        getAllContacts();
-       searchController.addListener(() { });
-       filterContract();
+       searchController.addListener(() {
+         filterContact();
+       });
+
     }else{
       handInvaliedPermissions(permissionStatus);
     }
@@ -122,7 +121,9 @@ class _ContactsPageState extends State<ContactsPage> {
             listItemExit==true?
             Expanded(
               child: ListView.builder(
-                itemCount: isSearchIng==true?contactsFiltered.length: contacts.length,
+                itemCount: isSearchIng==true?
+                contactsFiltered.length
+                    : contacts.length,
                 itemBuilder: (BuildContext context, int index){
                   Contact contact= isSearchIng==true
                       ? contactsFiltered[index]
