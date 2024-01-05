@@ -33,11 +33,11 @@ class _HomeScreenState extends State<HomeScreen> {
   }
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white70,
       body: SafeArea(
 
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(12.0),
           child: Column(
             children: [
               CustomAppBar(
@@ -50,17 +50,17 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: <Widget>[
                     CustomCarouel(),
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(12.0),
                       child: Text("Emergency",
-                        style: TextStyle(color: Colors.white70,fontSize: 40,fontWeight: FontWeight.bold),
+                        style: TextStyle(color: Colors.black,fontSize: 25,fontWeight: FontWeight.bold),
                       ),
                     ),
 
                     Emergency(),
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(12.0),
                       child: Text("Explore LiveSafe",
-                        style: TextStyle(color: Colors.white70,fontSize: 40,fontWeight: FontWeight.bold),
+                        style: TextStyle(color: Colors.black,fontSize: 25,fontWeight: FontWeight.bold),
                       ),
                     ),
                     LiveSafe(),
