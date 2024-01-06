@@ -1,7 +1,10 @@
 
+import 'package:after_marjana/db/db_services.dart';
+import 'package:after_marjana/model/contactsm.dart';
 import 'package:after_marjana/utils/constants.dart';
 import 'package:contacts_service/contacts_service.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 class ContactsPage extends StatefulWidget {
@@ -13,6 +16,7 @@ class ContactsPage extends StatefulWidget {
 class _ContactsPageState extends State<ContactsPage> {
   List<Contact> contacts=[];
   List<Contact> contactsFiltered=[];
+  DatabaseHelper _databseHelper= DatabaseHelper();
   TextEditingController searchController = TextEditingController();
   @override
   void initState(){
@@ -138,7 +142,16 @@ class _ContactsPageState extends State<ContactsPage> {
                       : CircleAvatar(
                         child: Text(contact.initials()),
                     ),
-
+                  onTap: (){
+                      if(contact.phones!.length>0){
+                        final String phoneNum=contact.phones!.elementAt(0).value!;
+                        final String name = contact.displayName!;
+                        addContact(TContact(phoneNum, name));
+                      }else{
+                        Fluttertoast.showToast(msg:
+                        "Oops!phone number of this contact doesn't exist");
+                      }
+                  },
                   );
                 },
               ),
@@ -149,5 +162,15 @@ class _ContactsPageState extends State<ContactsPage> {
         ),
       )
     );
+  }
+  void addContact( TContact newContact) async{
+    int result = await _databseHelper.insertContact(newContact);
+    if(result!=0){
+      Fluttertoast.showToast(msg: "contact added successfully");
+    }
+    else{
+      Fluttertoast.showToast(msg: "Failed to add contact");
+    }
+    Navigator.of(context).pop();
   }
 }
