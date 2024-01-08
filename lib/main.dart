@@ -1,4 +1,4 @@
-import 'package:after_marjana/child/buttom_page.dart';
+  import 'package:after_marjana/child/buttom_page.dart';
 import 'package:after_marjana/child/child_login_screen.dart';
 import 'package:after_marjana/db/share_pref.dart';
 import 'package:after_marjana/parent/parent_home_screen.dart';

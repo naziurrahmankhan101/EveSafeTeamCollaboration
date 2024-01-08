@@ -1,4 +1,5 @@
 
+import 'package:after_marjana/child/buttom_page.dart';
 import 'package:after_marjana/components/SecondaryButton.dart';
 import 'package:after_marjana/components/custom_textfield.dart';
 import 'package:after_marjana/child/register_child.dart';
@@ -53,7 +54,7 @@ class _LoginScreenState extends State<LoginScreen> {
             goTo(context, ParentHomeScreen());
           }else{
             MySharedPrefference.saveUserType('child');
-            goTo(context, HomeScreen());
+            goTo(context, BottomPage());
           }
         });
 
