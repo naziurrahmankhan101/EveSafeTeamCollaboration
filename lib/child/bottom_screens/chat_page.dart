@@ -6,7 +6,12 @@ class ChatPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Text("Chat Page")),
+        appBar : AppBar(
+          title: Text("SELECT GUARDIAN"),
+        ),
+      body: Column(
+        children: [],
+      )
     );
   }
 }
