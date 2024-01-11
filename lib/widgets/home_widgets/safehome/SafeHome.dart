@@ -27,21 +27,40 @@ class SafeHome extends StatelessWidget {
           height: 180,
           width: MediaQuery.of(context).size.width*0.7,
           decoration: BoxDecoration(
-
+            color: Colors.deepPurple.shade200,
+            borderRadius: BorderRadius.circular(20),
           ),
           child: Row(
             children: [
               Expanded(child: Column(
                 children: [
                   ListTile(
-                    title: Text("Send Location"),
-                    subtitle: Text("Share Location"),
+                    title: Text(
+                      "Send Location",
+                      style: TextStyle(
+                        color: Colors.white, // Set text color to white
+                        fontSize: 28, // Set font size
+                        fontWeight: FontWeight.bold, // Make text bold
+                      ),
+                    ),
+                    subtitle: Text(
+                      "Share Location",
+                      style: TextStyle(
+                        color: Colors.white, // Set text color to white
+                        fontSize: 17, // Set font size
+                        fontWeight: FontWeight.bold, // Make text bold
+                      ),
+                    ),
                   )
                 ],
               )),
               ClipRRect(
-               borderRadius: BorderRadius.circular(20),
-               child: Image.asset('assets/sharing_location.jpg')),
+                borderRadius: BorderRadius.circular(20),
+                child: Transform.scale(
+                  scale: 0.75, // Set your desired scale value
+                  child: Image.asset('assets/send.png'),
+                ),
+              ),
             ],
           ),
         ),
