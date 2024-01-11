@@ -18,13 +18,18 @@ class HospitalCard extends StatelessWidget {
               elevation: 3,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20),
+
               ),
               child: Container(
                 height: 57,
                 width: 57,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colors.blue.shade300, // Set your desired background color here
+                ),
                 child:Center(
                   child: Image.asset(
-                    'assets/Hospital.jpg',
+                    'assets/hospital.png',
                     height: 30,
                   ),
                 ),
@@ -32,7 +37,7 @@ class HospitalCard extends StatelessWidget {
             ),
           ),
           Text('Hospitals',
-            style: TextStyle(color: Colors.black,fontSize: 20,fontWeight: FontWeight.bold),)
+            style: TextStyle(color: Colors.black,fontSize: 15,fontWeight: FontWeight.bold),)
         ],
       ),
     );

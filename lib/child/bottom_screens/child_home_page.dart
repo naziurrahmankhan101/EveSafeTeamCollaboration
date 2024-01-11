@@ -40,17 +40,50 @@ class _HomeScreenState extends State<HomeScreen> {
           padding: const EdgeInsets.all(12.0),
           child: Column(
             children: [
-              CustomAppBar(
+              /*CustomAppBar(
                 quoteIndex: qindex,
                 onTap: getRandomQuote(),
+              ),*/
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Container(
+                    //width: MediaQuery.of(context).size.width,
+                    child: Transform.scale(
+                      scale: 3,
+                      child: Image.asset(
+                        'assets/evesafe.png',
+                        height: 40,
+                        width: 40,
+                      ),
+                    ),
+                  ),
+                  // Add more widgets as needed
+                ],
               ),
               Expanded(
                 child: ListView(
                   shrinkWrap: true,
                   children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Text(
+                        "     ",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 10,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                    CustomAppBar(
+                      quoteIndex: qindex,
+                      onTap: getRandomQuote(),
+                    ),
                     CustomCarouel(),
                     Padding(
                       padding: const EdgeInsets.all(12.0),
+
                       child: Text("Emergency",
                         style: TextStyle(color: Colors.black,fontSize: 25,fontWeight: FontWeight.bold),
                       ),

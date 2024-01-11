@@ -27,9 +27,12 @@ class AmbulanceEmergency extends StatelessWidget {
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                   colors: [
-                    Color(0xFFFD8080),
-                    Color(0xFFFB8580),
-                    Color(0xFFFBD079),
+                    Colors.deepPurple.shade300,
+                    Colors.deepPurple.shade200,
+                    //Colors.deepPurpleAccent.shade200,
+                    //Colors.lightBlueAccent.shade200,
+                    //Colors.blueGrey.shade300,
+                    //Color(0xAAB6FB50),
                   ],
                 )),
             child: Padding(
