@@ -22,9 +22,13 @@ class PharmacyCard extends StatelessWidget {
               child: Container(
                 height: 57,
                 width: 57,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colors.lightGreen.shade200, // Set your desired background color here
+                ),
                 child:Center(
                   child: Image.asset(
-                    'assets/Pharmacy.jpg',
+                    'assets/pharma.png',
                     height: 30,
                   ),
                 ),
@@ -32,7 +36,7 @@ class PharmacyCard extends StatelessWidget {
             ),
           ),
           Text('Pharmacy',
-              style: TextStyle(color: Colors.black,fontSize: 20,fontWeight: FontWeight.bold),)
+              style: TextStyle(color: Colors.black,fontSize: 15,fontWeight: FontWeight.bold),)
         ],
       ),
     );

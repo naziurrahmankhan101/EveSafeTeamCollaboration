@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'emergencies/policeemergency.dart';
 
 import 'emergencies/AmbulanceEmergency.dart';
-import 'emergencies/ArmyEmergency.dart';
+//import 'emergencies/ArmyEmergency.dart';
 import 'emergencies/FirebrigadeEmergency.dart';
 
 class Emergency extends StatelessWidget {
@@ -20,7 +20,7 @@ class Emergency extends StatelessWidget {
           PoliceEmergency(),
           AmbulanceEmergency(),
           FirebrigadeEmergency(),
-          ArmyEmergency(),
+          //ArmyEmergency(),
         ],
       ),
     );
