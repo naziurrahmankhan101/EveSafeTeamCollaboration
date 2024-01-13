@@ -170,6 +170,7 @@ class _SafeHomeState extends State<SafeHome> {
         ),
         child: Container(
           height: 180,
+
           width: MediaQuery.of(context).size.width * 0.7,
           decoration: BoxDecoration(),
           child: Row(
@@ -186,6 +187,7 @@ class _SafeHomeState extends State<SafeHome> {
               ClipRRect(
                   borderRadius: BorderRadius.circular(20),
                   child: Image.asset('assets/route.jpg')),
+        
             ],
           ),
         ),

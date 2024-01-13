@@ -11,7 +11,7 @@ class BusStationCard extends StatelessWidget {
       child: Column(
         children: [
           InkWell(
-            onTap: (){
+            onTap: () {
               onMapFunction!('Bus-stands+near+me');
             },
             child: Card(
@@ -22,17 +22,27 @@ class BusStationCard extends StatelessWidget {
               child: Container(
                 height: 57,
                 width: 57,
-                child:Center(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colors.deepPurple.shade200, // Set your desired background color here
+                ),
+                child: Center(
                   child: Image.asset(
-                    'assets/BusStop.jpg',
-                    height: 30,
+                    'assets/aimanbus.png',
+                    height: 35,
                   ),
                 ),
               ),
             ),
           ),
-          Text('BusStop',
-            style: TextStyle(color: Colors.black,fontSize: 20,fontWeight: FontWeight.bold),)
+          Text(
+            'Bus Stop',
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 15,
+              fontWeight: FontWeight.bold,
+            ),
+          )
         ],
       ),
     );

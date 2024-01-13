@@ -22,9 +22,13 @@ class PoliceStationCard extends StatelessWidget {
               child: Container(
                 height: 57,
                 width: 57,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Color(0xFFFD8080), // Set your desired background color here
+                ),
                 child:Center(
                   child: Image.asset(
-                      'assets/Police.jpg',
+                      'assets/police.png',
                     height: 30,
                   ),
                 ),
@@ -32,7 +36,7 @@ class PoliceStationCard extends StatelessWidget {
             ),
           ),
           Text('Police Stations',
-              style: TextStyle(color: Colors.black,fontSize: 20,fontWeight: FontWeight.bold),)
+              style: TextStyle(color: Colors.black,fontSize: 15,fontWeight: FontWeight.bold),)
 
         ],
       ),
