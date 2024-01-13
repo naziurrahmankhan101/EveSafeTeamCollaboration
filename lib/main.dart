@@ -54,6 +54,8 @@ class MyApp extends StatelessWidget {
       }
 
       return progressIndicator(context);
+      return progressIndicator(context);
+      //return showToast('User not found');
     },
         ),
     );
