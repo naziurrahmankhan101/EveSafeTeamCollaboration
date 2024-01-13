@@ -128,6 +128,7 @@ class _MessageTextFieldState extends State<MessageTextField> {
       'date': DateTime.now(),
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
