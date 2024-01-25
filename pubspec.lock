@@ -267,6 +267,7 @@ packages:
     source: hosted
     version: "11.6.0"
   firebase_storage_platform_interface:
+
     dependency: transitive
     description:
       name: firebase_storage_platform_interface
@@ -382,10 +383,10 @@ packages:
     dependency: transitive
     description:
       name: geolocator_android
-      sha256: "741579fa6c9e412984d2bdb2fbaa54e3c3f7587c60aeacfe6e058358a11f40f8"
+      sha256: "30ff8fa384ab6d35965aecc15dfc980e5ebc5f823352c1adfc87dc3d000e8e24"
       url: "https://pub.dev"
     source: hosted
-    version: "4.4.0"
+    version: "4.5.0"
   geolocator_apple:
     dependency: transitive
     description:
@@ -446,10 +447,12 @@ packages:
     dependency: "direct main"
     description:
       name: image_picker
+
       sha256: "26222b01a0c9a2c8fe02fc90b8208bd3325da5ed1f4a2acabf75939031ac0bdd"
       url: "https://pub.dev"
     source: hosted
     version: "1.0.7"
+
   image_picker_android:
     dependency: transitive
     description:
@@ -462,10 +465,12 @@ packages:
     dependency: transitive
     description:
       name: image_picker_for_web
+
       sha256: e2423c53a68b579a7c37a1eda967b8ae536c3d98518e5db95ca1fe5719a730a3
       url: "https://pub.dev"
     source: hosted
     version: "3.0.2"
+
   image_picker_ios:
     dependency: transitive
     description:
@@ -546,7 +551,9 @@ packages:
       url: "https://pub.dev"
     source: hosted
 
+
     version: "1.9.1"
+
   mime:
     dependency: transitive
     description:
@@ -922,7 +929,7 @@ packages:
     source: hosted
     version: "3.1.1"
   uuid:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: uuid
 

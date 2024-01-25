@@ -3,7 +3,7 @@ import 'package:after_marjana/child/bottom_screens/chat_page.dart';
 import 'package:after_marjana/child/bottom_screens/child_home_page.dart';
 import 'package:after_marjana/child/bottom_screens/contacts_page.dart';
 import 'package:after_marjana/child/bottom_screens/profile_page.dart';
-import 'package:after_marjana/child/bottom_screens/rating_page.dart'; // Fix: Changed ReviewPage to RatingPage
+import 'package:after_marjana/child/bottom_screens/review_page.dart'; // Fix: Changed ReviewPage to RatingPage
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
