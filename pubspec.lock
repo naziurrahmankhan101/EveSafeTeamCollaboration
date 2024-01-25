@@ -257,6 +257,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.10.0"
+
   firebase_storage:
     dependency: "direct main"
     description:
@@ -266,6 +267,7 @@ packages:
     source: hosted
     version: "11.6.0"
   firebase_storage_platform_interface:
+
     dependency: transitive
     description:
       name: firebase_storage_platform_interface
@@ -281,14 +283,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.6.17"
-  fixnum:
-    dependency: transitive
-    description:
-      name: fixnum
-      sha256: "25517a4deb0c03aa0f32fd12db525856438902d9c16536311e76cdc57b31d7d1"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.1.0"
+
   flutter:
     dependency: "direct main"
     description: flutter
@@ -452,10 +447,12 @@ packages:
     dependency: "direct main"
     description:
       name: image_picker
-      sha256: b6951e25b795d053a6ba03af5f710069c99349de9341af95155d52665cb4607c
+
+      sha256: "26222b01a0c9a2c8fe02fc90b8208bd3325da5ed1f4a2acabf75939031ac0bdd"
       url: "https://pub.dev"
     source: hosted
-    version: "0.8.9"
+    version: "1.0.7"
+
   image_picker_android:
     dependency: transitive
     description:
@@ -468,10 +465,12 @@ packages:
     dependency: transitive
     description:
       name: image_picker_for_web
-      sha256: "869fe8a64771b7afbc99fc433a5f7be2fea4d1cb3d7c11a48b6b579eb9c797f0"
+
+      sha256: e2423c53a68b579a7c37a1eda967b8ae536c3d98518e5db95ca1fe5719a730a3
       url: "https://pub.dev"
     source: hosted
-    version: "2.2.0"
+    version: "3.0.2"
+
   image_picker_ios:
     dependency: transitive
     description:
@@ -551,7 +550,10 @@ packages:
       sha256: a6e590c838b18133bb482a2745ad77c5bb7715fb0451209e1a7567d416678b8e
       url: "https://pub.dev"
     source: hosted
-    version: "1.10.0"
+
+
+    version: "1.9.1"
+
   mime:
     dependency: transitive
     description:
@@ -560,6 +562,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.4"
+
   nested:
     dependency: transitive
     description:
@@ -929,10 +932,12 @@ packages:
     dependency: "direct main"
     description:
       name: uuid
-      sha256: cd210a09f7c18cbe5a02511718e0334de6559871052c90a90c0cca46a4aa81c8
+
+      sha256: "22c94e5ad1e75f9934b766b53c742572ee2677c56bc871d850a57dad0f82127f"
       url: "https://pub.dev"
     source: hosted
-    version: "4.3.3"
+    version: "4.2.2"
+
   vector_math:
     dependency: transitive
     description:
