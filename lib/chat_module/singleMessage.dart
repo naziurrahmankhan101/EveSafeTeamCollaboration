@@ -36,7 +36,7 @@ class SingleMessage extends StatelessWidget {
       padding: EdgeInsets.all(10),
       child: Container(
           decoration: BoxDecoration(
-            color: isMe! ? Colors.pink : Colors.black,
+            color: isMe! ? Colors.deepPurple.shade300 : Colors.black,
             borderRadius: isMe!
                 ? BorderRadius.only(
               topLeft: Radius.circular(15),
@@ -92,7 +92,7 @@ class SingleMessage extends StatelessWidget {
           height: size.height / 2.5,
           width: size.width,
           decoration: BoxDecoration(
-            color: isMe! ? Colors.pink : Colors.black,
+            color: isMe! ? Colors.deepPurple.shade300 : Colors.black,
             borderRadius: isMe!
                 ? BorderRadius.only(
               topLeft: Radius.circular(15),
@@ -150,7 +150,7 @@ class SingleMessage extends StatelessWidget {
       padding: EdgeInsets.all(10),
       child: Container(
           decoration: BoxDecoration(
-            color: isMe! ? Colors.pink : Colors.black,
+            color: isMe! ? Colors.deepPurple.shade300 : Colors.black,
             borderRadius: isMe!
                 ? BorderRadius.only(
               topLeft: Radius.circular(15),
