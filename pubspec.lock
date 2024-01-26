@@ -527,6 +527,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.1"
+  logging:
+    dependency: transitive
+    description:
+      name: logging
+      sha256: "623a88c9594aa774443aa3eb2d41807a48486b5613e67599fb4c41c0ad47c340"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.2.0"
   matcher:
     dependency: transitive
     description:
@@ -550,8 +558,6 @@ packages:
       sha256: "3c74dbf8763d36539f114c799d8a2d87343b5067e9d796ca22b5eb8437090ee3"
       url: "https://pub.dev"
     source: hosted
-
-    version: "1.9.1"
 
   mime:
     dependency: transitive
@@ -713,14 +719,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.27.7"
-  scroll_to_index:
-    dependency: "direct main"
-    description:
-      name: scroll_to_index
-      sha256: "5df1597b5bfa1703c02962a7478a187a8c9dedaeb871aedbf7874ee0d58a0bba"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.1.1"
+
   shared_preferences:
     dependency: "direct main"
     description:
@@ -846,6 +845,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.1.0+1"
+  telephony:
+    dependency: "direct main"
+    description:
+      name: telephony
+      sha256: "821e074acec3c611e48edadd50a6d9fef864943771a545da7924adcc8509ada9"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.2.0"
   term_glyph:
     dependency: transitive
     description:
