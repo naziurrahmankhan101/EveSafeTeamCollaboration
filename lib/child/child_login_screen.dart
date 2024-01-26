@@ -9,6 +9,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 import '../components/PrimaryButton.dart';
 import 'bottom_screens/child_home_page.dart';
@@ -64,10 +65,10 @@ class _LoginScreenState extends State<LoginScreen> {
         isLoading = false;
       });
       if (e.code == 'user-not-found') {
-        dialogueBox(context, 'No user found for that email.');
+        showToast('No user found for that email.');
         print('No user found for that email.');
       } else if (e.code == 'wrong-password') {
-        dialogueBox(context, 'Wrong password provided for that user.' );
+        showToast('Wrong password provided for that user.');
         print('Wrong password provided for that user.');
       }
     }
@@ -165,10 +166,11 @@ class _LoginScreenState extends State<LoginScreen> {
                           PrimaryButton(
                             title: "Login",
                               onPressed: (){
-                              //progressIndicator(context);
+                              progressIndicator(context);
                               if(_formKey.currentState!.validate()){
                                 _onSubmit();
                               }
+                              progressIndicator(context);
 
                           }),
                         ],
@@ -202,4 +204,15 @@ class _LoginScreenState extends State<LoginScreen> {
           )),
     );
   }
+}
+void showToast(String message) {
+  Fluttertoast.showToast(
+    msg: message,
+    toastLength: Toast.LENGTH_SHORT,
+    gravity: ToastGravity.BOTTOM,
+    timeInSecForIosWeb: 5,
+    backgroundColor: Colors.red,
+    textColor: Colors.red,
+    fontSize: 16.0,
+  );
 }

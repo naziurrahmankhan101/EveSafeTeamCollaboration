@@ -55,12 +55,7 @@ dependencies:
   geocoding: ^2.1.1
   firebase_storage: ^11.6.0
   image_picker: ^0.8.6+1
-  uuid: ^4.2.2
-  cached_network_image: ^3.2.3
-  shake: ^2.2.0
-  telephony: ^0.2.0
 
-  background_sms: ^0.0.4
 
   flutter_background_service: ^2.4.6
   flutter_background_service_android: ^3.0.3
