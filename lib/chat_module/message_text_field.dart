@@ -128,6 +128,7 @@ class _MessageTextFieldState extends State<MessageTextField> {
       'date': DateTime.now(),
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -142,7 +143,7 @@ class _MessageTextFieldState extends State<MessageTextField> {
           children: [
             Expanded(
               child: TextField(
-                cursorColor: Colors.pink,
+                cursorColor: Colors.deepPurple.shade300,
                 controller: _controller,
                 decoration: InputDecoration(
                     hintText: 'type your message',
@@ -158,7 +159,7 @@ class _MessageTextFieldState extends State<MessageTextField> {
                         },
                         icon: Icon(
                           Icons.add_box_rounded,
-                          color: Colors.pink,
+                          color: Colors.deepPurple.shade300,
                         ))),
               ),
             ),
@@ -172,7 +173,7 @@ class _MessageTextFieldState extends State<MessageTextField> {
                 },
                 child: Icon(
                   Icons.send,
-                  color: Colors.pink,
+                  color: Colors.deepPurple.shade300,
                   size: 30,
                 ),
               ),
