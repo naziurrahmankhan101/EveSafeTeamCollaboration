@@ -51,9 +51,18 @@ dependencies:
   provider: ^6.0.4
   sqflite: ^2.2.0+3
 
-  background_sms: ^0.0.4
   geolocator: ^10.1.0
   geocoding: ^2.1.1
+  firebase_storage: ^11.6.0
+  image_picker: ^0.8.6+1
+  uuid: ^4.2.2
+  cached_network_image: ^3.2.3
+  shake: ^2.2.0
+  telephony: ^0.2.0
+
+  background_sms: ^0.0.4
+
+
 
 
 
