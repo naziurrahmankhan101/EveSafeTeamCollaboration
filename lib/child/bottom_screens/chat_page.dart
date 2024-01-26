@@ -61,7 +61,7 @@ import '../child_login_screen.dart';
      // WidgetsBinding.instance.addObserver();
      return Scaffold(
        appBar: AppBar(
-         backgroundColor: Colors.pink,
+         backgroundColor: Colors.deepPurple.shade200,
          // backgroundColor: Color.fromARGB(255, 250, 163, 192),
          title: Text("SELECT GUARDIAN"),
        ),
@@ -83,7 +83,7 @@ import '../child_login_screen.dart';
                return Padding(
                  padding: const EdgeInsets.all(8.0),
                  child: Container(
-                   color: Color.fromARGB(255, 250, 163, 192),
+                   color: Colors.deepPurple.shade200,
                    child: ListTile(
                      onTap: () {
                        goTo(
