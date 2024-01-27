@@ -54,7 +54,8 @@ dependencies:
   geolocator: ^10.1.0
   geocoding: ^2.1.1
   firebase_storage: ^11.6.0
-  image_picker: ^0.8.6+1
+
+  image_picker: ^1.0.7
 
 
   flutter_background_service: ^2.4.6
