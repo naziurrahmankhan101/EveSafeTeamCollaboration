@@ -61,6 +61,10 @@ dependencies:
   flutter_background_service_android: ^3.0.3
   flutter_background_service_ios: ^2.4.0
   flutter_local_notifications: ^8.2.0
+  background_sms: ^0.0.4
+  shake: ^2.2.0
+  telephony: ^0.2.0
+  cached_network_image: ^3.3.1
 
 
 
