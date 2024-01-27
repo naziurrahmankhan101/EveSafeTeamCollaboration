@@ -115,7 +115,7 @@ saveReview() async{
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.pink,
+        backgroundColor: Colors.deepPurple.shade300,
         onPressed: () {
           showAlert(context);
         },

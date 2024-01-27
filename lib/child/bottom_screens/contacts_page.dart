@@ -127,7 +127,7 @@ class _ContactsPageState extends State<ContactsPage> {
             if (!isSearching)
               Container(
                 alignment: Alignment.center,
-                height: MediaQuery.of(context).size.height * 0.6,
+                height: MediaQuery.of(context).size.height * 0.3,
                 child: Text(
                   "Search Contacts",
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),

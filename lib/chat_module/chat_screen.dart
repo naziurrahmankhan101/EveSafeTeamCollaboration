@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:after_marjana/chat_module/message_text_field.dart';
@@ -28,6 +29,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
   // Add ScrollController
   ScrollController _scrollController = ScrollController();
+  final FirebaseMessaging _firebaseMessaging = FirebaseMessaging.instance;
 
   getStatus() async {
     await FirebaseFirestore.instance
@@ -44,6 +46,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
   @override
   void initState() {
+    super.initState();
     getStatus();
 
     // Add listener for scroll controller
@@ -54,7 +57,25 @@ class _ChatScreenState extends State<ChatScreen> {
       }
     });
 
-    super.initState();
+    // Subscribe to FCM topic based on friendId
+    _firebaseMessaging.subscribeToTopic(widget.friendId);
+
+    // Handle incoming messages
+    FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+      // Handle the received message and show a notification
+      showNotification(message);
+    });
+  }
+
+  void showNotification(RemoteMessage message) {
+    // Implement your notification logic here
+    Fluttertoast.showToast(
+      msg: message.notification?.title ?? "New Message",
+      toastLength: Toast.LENGTH_SHORT,
+      gravity: ToastGravity.BOTTOM,
+      backgroundColor: Colors.deepPurple,
+      textColor: Colors.white,
+    );
   }
 
   @override
@@ -74,7 +95,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   .collection('messages')
                   .doc(widget.friendId)
                   .collection('chats')
-                  .orderBy('date', descending: true) // Set descending to true
+                  .orderBy('date', descending: true)
                   .snapshots(),
               builder: (BuildContext context,
                   AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -91,8 +112,8 @@ class _ChatScreenState extends State<ChatScreen> {
                   }
                   return Container(
                     child: ListView.builder(
-                      controller: _scrollController, // Pass the controller
-                      reverse: true, // Set reverse to true
+                      controller: _scrollController,
+                      reverse: true,
                       itemCount: snapshot.data!.docs.length,
                       itemBuilder: (BuildContext context, int index) {
                         bool isMe =

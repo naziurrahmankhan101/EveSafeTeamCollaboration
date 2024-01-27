@@ -143,7 +143,7 @@ class _MessageTextFieldState extends State<MessageTextField> {
           children: [
             Expanded(
               child: TextField(
-                cursorColor: Colors.deepPurple.shade300,
+                cursorColor: Colors.pink,
                 controller: _controller,
                 decoration: InputDecoration(
                     hintText: 'type your message',
@@ -159,7 +159,7 @@ class _MessageTextFieldState extends State<MessageTextField> {
                         },
                         icon: Icon(
                           Icons.add_box_rounded,
-                          color: Colors.deepPurple.shade300,
+                          color: Colors.pink,
                         ))),
               ),
             ),
@@ -173,7 +173,7 @@ class _MessageTextFieldState extends State<MessageTextField> {
                 },
                 child: Icon(
                   Icons.send,
-                  color: Colors.deepPurple.shade300,
+                  color: Colors.pink,
                   size: 30,
                 ),
               ),

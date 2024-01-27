@@ -5,10 +5,14 @@ import 'package:after_marjana/parent/parent_home_screen.dart';
 import 'package:after_marjana/utils/constants.dart';
 import 'package:after_marjana/utils/flutter_background_services.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:after_marjana/child/bottom_screens/child_home_page.dart';
 import 'package:after_marjana/child/buttom_page.dart';
+
+final navigatorkey = GlobalKey<ScaffoldMessengerState>();
+
 void main()async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
@@ -19,6 +23,9 @@ void main()async {
         projectId: "evesafe-86e8f",
     ),
   );
+
+
+  WidgetsFlutterBinding.ensureInitialized();
   await MySharedPrefference.init();
   await initializeService();
   runApp(const MyApp());
