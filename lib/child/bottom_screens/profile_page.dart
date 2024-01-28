@@ -2,19 +2,16 @@ import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:uuid/uuid.dart';
 import 'package:after_marjana/child/child_login_screen.dart';
 import 'package:after_marjana/components/PrimaryButton.dart';
 import 'package:after_marjana/components/custom_textfield.dart';
 import 'package:after_marjana/utils/constants.dart';
 
 class CheckUserStatusBeforeChatOnProfile extends StatelessWidget {
-  const CheckUserStatusBeforeChatOnProfile({super.key});
+  const CheckUserStatusBeforeChatOnProfile({Key? key});
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +34,7 @@ class CheckUserStatusBeforeChatOnProfile extends StatelessWidget {
 }
 
 class ProfilePage extends StatefulWidget {
-  const ProfilePage({super.key});
+  const ProfilePage({Key? key});
 
   @override
   State<ProfilePage> createState() => _ProfilePageState();
@@ -46,9 +43,6 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   TextEditingController nameC = TextEditingController();
   final key = GlobalKey<FormState>();
-  String? id;
-  String? profilePic;
-  String? downloadUrl;
   bool isSaving = false;
 
   getDate() async {
@@ -59,8 +53,6 @@ class _ProfilePageState extends State<ProfilePage> {
         .then((value) {
       setState(() {
         nameC.text = value.docs.first['name'];
-        id = value.docs.first.id;
-        profilePic = value.docs.first['profilePic'];
       });
     });
   }
@@ -94,44 +86,6 @@ class _ProfilePageState extends State<ProfilePage> {
                     style: TextStyle(fontSize: 25),
                   ),
                   SizedBox(height: 15),
-                  GestureDetector(
-                    onTap: () async {
-                      final XFile? pickImage = await ImagePicker()
-                          .pickImage(
-                          source: ImageSource.gallery,
-                          imageQuality: 50);
-                      if (pickImage != null) {
-                        setState(() {
-                          profilePic = pickImage.path;
-                        });
-                      }
-                    },
-                    child: Container(
-                      child: profilePic == null
-                          ? CircleAvatar(
-                        backgroundColor: Colors.deepPurple,
-                        radius: 80,
-                        child: Center(
-                            child: Image.asset(
-                              'assets/aimancamera.png',
-                              height: 80,
-                              width: 80,
-                            )),
-                      )
-                          : profilePic!.contains('http')
-                          ? CircleAvatar(
-                        backgroundColor: Colors.deepPurple,
-                        radius: 80,
-                        backgroundImage:
-                        NetworkImage(profilePic!),
-                      )
-                          : CircleAvatar(
-                          backgroundColor: Colors.deepPurple,
-                          radius: 80,
-                          backgroundImage:
-                          FileImage(File(profilePic!))),
-                    ),
-                  ),
                   CustomTextField(
                     controller: nameC,
                     hintText: nameC.text,
@@ -149,10 +103,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       if (key.currentState!.validate()) {
                         SystemChannels.textInput
                             .invokeMethod('TextInput.hide');
-                        profilePic == null
-                            ? Fluttertoast.showToast(
-                            msg: 'Please select a profile picture')
-                            : update();
+                        update();
                       }
                     },
                   ),
@@ -182,37 +133,22 @@ class _ProfilePageState extends State<ProfilePage> {
     );
   }
 
-  Future<String?> uploadImage(String filePath) async {
-    try {
-      final filenName = Uuid().v4();
-      final Reference fbStorage =
-      FirebaseStorage.instance.ref('profile').child(filenName);
-      final UploadTask uploadTask = fbStorage.putFile(File(filePath));
-      await uploadTask.then((p0) async {
-        downloadUrl = await fbStorage.getDownloadURL();
-      });
-      return downloadUrl;
-    } catch (e) {
-      Fluttertoast.showToast(msg: e.toString());
-    }
-  }
-
   update() async {
     setState(() {
       isSaving = true;
     });
-    uploadImage(profilePic!).then((value) {
-      Map<String, dynamic> data = {
-        'name': nameC.text,
-        'profilePic': downloadUrl,
-      };
-      FirebaseFirestore.instance
-          .collection('users')
-          .doc(FirebaseAuth.instance.currentUser!.uid)
-          .update(data);
-      setState(() {
-        isSaving = false;
-      });
+
+    Map<String, dynamic> data = {
+      'name': nameC.text,
+    };
+
+    await FirebaseFirestore.instance
+        .collection('users')
+        .doc(FirebaseAuth.instance.currentUser!.uid)
+        .update(data);
+
+    setState(() {
+      isSaving = false;
     });
   }
 }

@@ -36,7 +36,7 @@ class _ReviewPageState extends State<ReviewPage>{
              padding: const EdgeInsets.all(8.0),
              child: CustomTextField(
                controller: viewsC,
-               hintText: 'enter location',
+               hintText: 'enter review',
                maxLines: 3,
              ),
            ),
